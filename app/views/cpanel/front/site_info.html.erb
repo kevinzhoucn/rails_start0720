@@ -1,0 +1,16 @@
+<div>
+  <p>
+    <%= t('cpanel.edit_site_title') %>
+    |
+    <%= @site_title_item.value %>
+    |
+    <%= link_to t('edit'), edit_cpanel_site_config_path(@site_title_item) %>
+  </p>
+  <p>
+    <%= t('cpanel.edit_home_title') %>
+    |
+    <%= @home_title_item.value %>
+    |
+    <%= link_to t('edit'), edit_cpanel_site_config_path(@home_title_item) %>
+  </p>
+</div>

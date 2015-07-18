@@ -1,0 +1,28 @@
+<%= form_for([:cpanel, @cpanel_site_config]) do |f| %>
+  <% if @cpanel_site_config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cpanel_site_config.errors.count, "error") %> prohibited this cpanel_site_config from being saved:</h2>
+
+      <ul>
+      <% @cpanel_site_config.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>  
+
+  <div class="field" style="display:none">
+    <%= f.label :key %><br>
+    <%= f.text_field :key %>
+  </div>
+  <div class="field">
+    <%= f.text_area :value %>
+  </div>
+  <div class="quick-press">
+    <%= f.submit class:'submit', style:'width:auto;margin:10px 10px;padding:8px;font-family:"icomoon";border-radius:6px', value:'l 保存'%>
+  </div>
+<% end %>
+
+<script>
+CKEDITOR.replace('site_config_value');
+</script>
