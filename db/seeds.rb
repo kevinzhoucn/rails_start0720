@@ -7,7 +7,7 @@
 
 # SiteConfig.delete_all
 # SiteConfig.save_default("site_title", "Our Site")
-SiteConfig.save_default("home_title", "Our Home Page")
+# SiteConfig.save_default("home_title", "Our Home Page")
 
 # SiteConfig.save_default("index_html",<<-eos
 # <div class="box" style="text-align:center;">
@@ -43,8 +43,11 @@ SiteConfig.save_default("home_title", "Our Home Page")
 # SiteConfig.save_default("contact_en", "contact info")
 # SiteConfig.save_default("site_logo","logo.png")
 # SiteConfig.save_default("site_slogan","SLOGAN")
+# SiteConfig.save_default("company_summary", "this is company summary")
 
 # Picture.delete_all
+# Picture.create(key: "home_nav_image", value: "front.image.nav")
+# Picture.create(key: "home_company_image", value: "front.image.company")
 # Picture.create(key: "about_image", value: "about_image")
 # Picture.create(key: "news_image")
 # Picture.create(key: "activity_image")

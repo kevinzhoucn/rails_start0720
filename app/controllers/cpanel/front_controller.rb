@@ -6,6 +6,10 @@ class Cpanel::FrontController < Cpanel::ApplicationController
   def site_info
     @site_title_item = SiteConfig.where(key: 'site_title').first
     @home_title_item = SiteConfig.where(key: 'home_title').first
+    @home_company_summary = SiteConfig.where(key: 'company_summary').first
+
+    @home_nav_image = Picture.where(key: 'home_nav_image').first
+    @home_company_image = Picture.where(key: 'home_company_image').first
   end
 
   # def about

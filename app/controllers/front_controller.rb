@@ -12,6 +12,9 @@ class FrontController < ApplicationController
     @front_activites = Activity.all.limit(5)
 
     @partner_urls = Partner.all
+
+    @home_company_image = Picture.where(key: "home_company_image").first.avatar.url
+    @home_company_summary = SiteConfig.company_summary
   end
 
   def about

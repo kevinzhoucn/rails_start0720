@@ -8,10 +8,21 @@ zh-CN:
   positions: 加入我们
   resumes: 简历
   contact_us: 联系我们
+  edit: 编辑
   cpanel:
-    edit_site_title: 编辑网站标题
-    edit_home_title: 编辑首页标题
+    edit_site_title: 网站标题
+    edit_home_title: 首页标题
+    edit_home_nav_image: 导航条图片
+    edit_home_company_image: 公司首页图片
+    edit_home_company_summary: 公司简介
   front:
+    nav:
+      tab01: 首页
+      tab02: 新闻
+      tab03: 产品
+      tab04: 支持
+    image:
+      company: 公司首页图片
     index:
       services: 我们的服务
 
