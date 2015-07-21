@@ -35,5 +35,6 @@ class FrontController < ApplicationController
   end
 
   def support
+    @support_content = !SiteConfig.support_content ? "" : SiteConfig.support_content    
   end
 end

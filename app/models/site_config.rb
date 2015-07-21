@@ -51,4 +51,10 @@ class SiteConfig
   def self.save_default(key, value)
     create(key: key, value: value.to_s) unless find_by_key(key)
   end
+
+  def self.get_object_by_key(key)
+    ret_obj = find_by_key(key)
+    ret_obj = create(key: key, value: "") unless ret_obj
+    ret_obj
+  end
 end

@@ -23,15 +23,16 @@ class Cpanel::FrontController < Cpanel::ApplicationController
   end
 
   def about
-    @about_en = SiteConfig.where(key: 'about_en').first
-    @about_cn = SiteConfig.where(key: 'about_cn').first
+    @about_en = SiteConfig.find_by_key('about_en')
+    @about_cn = SiteConfig.find_by_key('about_cn')
   end
 
   def contact_us
-    @contact_cn = SiteConfig.where(key: 'contact_cn').first
-    @contact_en = SiteConfig.where(key: 'contact_en').first
+    @contact_cn = SiteConfig.find_by_key('contact_cn')
+    @contact_en = SiteConfig.find_by_key('contact_en')
   end
 
   def support 
-  end
+    @support_content = SiteConfig.get_object_by_key('support_content')
+  end  
 end

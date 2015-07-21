@@ -1,3 +1,19 @@
 <h2>
-  <%= t('cpanel.front.support.title') %>
+  <%= t('cpanel.front.support.title') %>  
 </h2>
+
+<%= @support_content.value %>
+
+
+<%= form_for([:cpanel, @support_content]) do |f| %>
+  <div class="field" style="display:none">
+    <%= f.label :key %><br>
+    <%= f.text_field :key %>
+  </div>
+  <div class="field">
+    <%= f.cktext_area :value %>
+  </div>
+  <div class="quick-press">
+    <%= f.submit t('cpanel.front.support.save') %>
+  </div>
+<% end %>

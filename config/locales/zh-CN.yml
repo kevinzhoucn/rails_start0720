@@ -25,6 +25,7 @@ zh-CN:
         support: 编辑支持页面
       support:
         title: 编辑支持页面 
+        save: 保存
     news:
       index: 
         new: 新建新闻
