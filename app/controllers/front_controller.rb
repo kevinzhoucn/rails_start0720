@@ -21,6 +21,10 @@ class FrontController < ApplicationController
     @home_product_image = Picture.get_image('home_product_image')
 
     # @news_list = News.all.limit(5)
+
+    # search_item = SEARCH_ITEMS.split(',')[0]
+    # @search_itmes = search_item.all.first
+    @search_itmes = SEARCH_ITEMS
   end
 
   def about
