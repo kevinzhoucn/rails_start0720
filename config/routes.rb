@@ -1,4 +1,6 @@
 Rails40Starter::Application.routes.draw do
+  resources :products, only: [:index, :show]
+
   resources :partners
   resources :pictures
 
@@ -9,7 +11,7 @@ Rails40Starter::Application.routes.draw do
   resources :resumes
   resources :positions
   resources :activities
-  resources :news, except: [:search]  
+  resources :news, only: [:index, :show]
   resources :services
 
   namespace :cpanel do
@@ -24,6 +26,7 @@ Rails40Starter::Application.routes.draw do
     resources :positions
     resources :slides
     resources :pictures
+    resources :products
   end
 
   get '/about' => 'front#about', as: :front_about
