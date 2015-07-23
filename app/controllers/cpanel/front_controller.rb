@@ -10,6 +10,7 @@ class Cpanel::FrontController < Cpanel::ApplicationController
 
     @home_nav_image = Picture.where(key: 'home_nav_image').first
     @home_company_image = Picture.where(key: 'home_company_image').first
+    @home_news_image = Picture.where(key: 'home_news_image').first
   end
 
   # def about

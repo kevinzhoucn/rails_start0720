@@ -48,6 +48,7 @@
 # Picture.delete_all
 # Picture.create(key: "home_nav_image", value: "front.image.nav")
 # Picture.create(key: "home_company_image", value: "front.image.company")
+# Picture.create(key: "home_news_image", value: "cpanel.front.image.news")
 # Picture.create(key: "about_image", value: "about_image")
 # Picture.create(key: "news_image")
 # Picture.create(key: "activity_image")

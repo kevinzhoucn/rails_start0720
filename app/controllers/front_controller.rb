@@ -13,8 +13,9 @@ class FrontController < ApplicationController
 
     @partner_urls = Partner.all
 
-    @home_company_image = Picture.where(key: "home_company_image").first.avatar.url
+    @home_company_image = Picture.where(key: "home_company_image").first
     @home_company_summary = SiteConfig.company_summary
+    @home_news_image = Picture.where(key: "home_news_image").first
   end
 
   def about

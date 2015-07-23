@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
     def set_params
       @site_title = SiteConfig.site_title
       @home_title = SiteConfig.home_title
-      @home_nav_image = Picture.where(key: 'home_nav_image').first.avatar.url
+      @home_nav_image = Picture.where(key: 'home_nav_image').first
     end
 end
