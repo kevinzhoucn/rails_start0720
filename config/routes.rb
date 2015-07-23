@@ -2,18 +2,17 @@ Rails40Starter::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :products, only: [:index, :show]
 
-  resources :partners
-  resources :pictures
+  resources :pictures, only: [:index, :show]
 
   get '/news/search' => 'news#search', as: :news_search
   get '/activities/search' => 'activities#search', as: :activities_search
 
-  resources :slides
+  resources :slides, only: [:index, :show]
   resources :resumes
-  resources :positions
-  resources :activities
+  resources :positions, only: [:index, :show]
+  resources :activities, only: [:index, :show]
   resources :news, only: [:index, :show]
-  resources :services
+  resources :services, only: [:index, :show]
 
   namespace :cpanel do
     get '/' => 'front#index', as: :front_index
@@ -29,6 +28,7 @@ Rails40Starter::Application.routes.draw do
     resources :slides
     resources :pictures
     resources :products
+    resources :partners
   end
 
   get '/about' => 'front#about', as: :front_about
