@@ -24,7 +24,11 @@ class FrontController < ApplicationController
 
     # search_item = SEARCH_ITEMS.split(',')[0]
     # @search_itmes = search_item.all.first
-    @search_itmes = SEARCH_ITEMS
+    @search_itmes = SEARCH_ITEMS ? SEARCH_ITEMS : "SEARCH_ITEMS"
+    search_item = SEARCH_ITEMS.split(',')[0]    
+    @search_itmes = eval(search_item).all.first
+
+    @search_result = site_search("prod")
   end
 
   def about
@@ -41,4 +45,21 @@ class FrontController < ApplicationController
   def support
     @support_content = !SiteConfig.support_content ? "" : SiteConfig.support_content    
   end
+
+  private
+    def site_search(key)
+      @search_result = []
+      search_item = SEARCH_ITEMS.split(',').map { |item| item.strip() }
+      # item = search_item[1]
+      # @search_result = eval(item).where(title: /#{key}/i)
+      search_item.each do |item|
+        if key
+          result = eval(item).where(title: /#{key}/i)
+          # result = eval(item).all.first
+          @search_result << result if result.length > 0
+          # @search_result << eval(item).all.first.title
+        end
+      end
+      return @search_result
+    end
 end

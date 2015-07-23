@@ -11,7 +11,7 @@ class NewsController < ApplicationController
 
   def search
     @key_words = params[:key]
-    @news = News.search(params[:key]).page params[:page]
+    @news = News.search(@key_words).page params[:page]
     respond_with(@news)
   end
 

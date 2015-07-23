@@ -1,0 +1,4 @@
+<%= form_tag local_search_url, :method => 'get' do %>
+  <%= text_field_tag :key, params[:key] %>
+  <%= submit_tag 'Search' %>
+<% end %>

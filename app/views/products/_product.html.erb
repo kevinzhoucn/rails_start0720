@@ -1,1 +1,1 @@
-<%= link_to product.title, news %> - <%= product.created_at.strftime("%Y-%m-%d") %>
+<%= link_to product.title, product %> - <%= product.created_at ? product.created_at.strftime("%Y-%m-%d") : "2000-00-00" %>

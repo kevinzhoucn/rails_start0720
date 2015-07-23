@@ -15,7 +15,7 @@
 </div>
 
 <div>
-  <%= image_tag @home_product_image.avatar.url, size: "250x200", alt: "Home News Image" %>  
+  <%= image_tag @home_product_image.avatar.url, size: "250x200", alt: "Home Product Image" %>  
   <span>
     <%= render @front_products %>
   </span>
@@ -23,4 +23,17 @@
   <span>
     <%= link_to "More...", products_path %>
   </span>
+</div>
+
+<div>
+  <p>Search result:</p>
+  <ul>
+    <% @search_result.each do |item_result| %>
+      <% item_result.each do |item| %>
+        <li>
+          <%= link_to item.title, item %>
+        </li>
+      <% end %>  
+    <% end %>
+  </ul>
 </div>

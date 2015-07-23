@@ -23,12 +23,13 @@ class Cpanel::ProductsController < Cpanel::ApplicationController
   def create
     @product = Product.new(product_params)
     @product.save
-    respond_with(@product)
+    redirect_to cpanel_product_path(@product)
   end
 
   def update
     @product.update(product_params)
-    respond_with(@product)
+    # respond_with(@product)
+    redirect_to cpanel_product_path(@product)
   end
 
   def destroy
