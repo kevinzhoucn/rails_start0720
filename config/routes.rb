@@ -3,11 +3,21 @@ Rails40Starter::Application.routes.draw do
   resources :products, only: [:index, :show]
 
   resources :pictures, only: [:index, :show]
+  devise_for :users
 
+  # scope "(:locale)", :locale => /en|zh-CN/ do
+  get '/' => 'front#index'
+  get '/about' => 'front#about', as: :front_about
+  get '/contact' => 'front#contact_us', as: :front_contact
+  get '/support' => 'front#support', as: :front_support
   get '/news/search' => 'news#search', as: :news_search
   get '/activities/search' => 'activities#search', as: :activities_search
 
   resources :slides, only: [:index, :show]
+  resources :products, only: [:index, :show]
+  resources :partners
+  resources :pictures
+  resources :slides
   resources :resumes
   resources :positions, only: [:index, :show]
   resources :activities, only: [:index, :show]
@@ -31,13 +41,8 @@ Rails40Starter::Application.routes.draw do
     resources :partners
   end
 
-  get '/about' => 'front#about', as: :front_about
-  get '/contact' => 'front#contact_us', as: :front_contact
-  get '/support' => 'front#support', as: :front_support
-
-  devise_for :users
+  root 'front#index'  
   
-  root 'front#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
