@@ -1,4 +1,9 @@
 <div>
-  <%= image_tag @home_company_image, size: "250x200", alt: "Home Company Image" %>
+  <%= image_tag @home_company_image.avatar.url, size: "250x200", alt: "Home Company Image" %>
   <%= @home_company_summary.html_safe %>
+</div>
+
+<div>
+  <%= image_tag @home_news_image.avatar.url, size: "250x200", alt: "Home News Image" %>  
+  <span>News List</span>
 </div>

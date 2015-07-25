@@ -15,6 +15,7 @@ zh-CN:
     edit_home_nav_image: 导航条图片
     edit_home_company_image: 公司首页图片
     edit_home_company_summary: 公司简介
+    edit_home_news_image: 首页新闻图片
     news:
       index: 
         new: 新建新闻
