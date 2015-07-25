@@ -5,6 +5,7 @@ class NewsController < ApplicationController
 
   def index
     @news = News.all.page params[:page]
+    @news_count = News.all.count
     respond_with(@news)
   end
 

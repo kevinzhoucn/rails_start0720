@@ -15,6 +15,9 @@ zh-CN:
     edit_home_nav_image: 导航条图片
     edit_home_company_image: 公司首页图片
     edit_home_company_summary: 公司简介
+    news:
+      index: 
+        new: 新建新闻
   front:
     nav:
       tab01: 首页
@@ -25,6 +28,12 @@ zh-CN:
       company: 公司首页图片
     index:
       services: 我们的服务
+  news:
+    index:
+      total_items: "共有%{count}条新闻"
+  product:
+    index:
+      total_items: "共有%{count}件产品"
 
   views:
     pagination:
