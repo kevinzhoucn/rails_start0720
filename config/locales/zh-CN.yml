@@ -16,9 +16,21 @@ zh-CN:
     edit_home_company_image: 公司首页图片
     edit_home_company_summary: 公司简介
     edit_home_news_image: 首页新闻图片
+    edit_home_product_image: 首页产品图片
+    front:
+      edit:
+        site_config: 编辑网站配置信息
+        news: 编辑新闻
+        products: 编辑产品
+        support: 编辑支持页面
+      support:
+        title: 编辑支持页面 
     news:
       index: 
         new: 新建新闻
+    product:
+      index:
+        new: 新建产品
   front:
     nav:
       tab01: 首页

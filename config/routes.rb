@@ -1,4 +1,5 @@
 Rails40Starter::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   resources :products, only: [:index, :show]
 
   resources :partners
@@ -19,6 +20,7 @@ Rails40Starter::Application.routes.draw do
     get '/about'=> 'front#about', as: :front_about
     get '/contact' => 'front#contact_us', as: :front_contact
     get '/site/edit' => 'front#site_info', as: :front_site_info
+    get '/support' => 'front#support', as: :front_support
     resources :site_configs
     resources :news
     resources :activities
@@ -31,6 +33,7 @@ Rails40Starter::Application.routes.draw do
 
   get '/about' => 'front#about', as: :front_about
   get '/contact' => 'front#contact_us', as: :front_contact
+  get '/support' => 'front#support', as: :front_support
 
   devise_for :users
   

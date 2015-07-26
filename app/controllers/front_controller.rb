@@ -10,12 +10,17 @@ class FrontController < ApplicationController
 
     @front_news = News.all.limit(5)
     @front_activites = Activity.all.limit(5)
+    @front_products = Product.all.limit(5)
 
     @partner_urls = Partner.all
 
     @home_company_image = Picture.where(key: "home_company_image").first
     @home_company_summary = SiteConfig.company_summary
-    @home_news_image = Picture.where(key: "home_news_image").first
+    # @home_news_image = Picture.where(key: "home_news_image").first
+    @home_news_image = Picture.get_image('home_news_image')
+    @home_product_image = Picture.get_image('home_product_image')
+
+    # @news_list = News.all.limit(5)
   end
 
   def about
@@ -27,5 +32,8 @@ class FrontController < ApplicationController
   def contact_us
     @contact_cn = SiteConfig.contact_cn
     @contact_en = SiteConfig.contact_en
+  end
+
+  def support
   end
 end

@@ -5,5 +5,22 @@
 
 <div>
   <%= image_tag @home_news_image.avatar.url, size: "250x200", alt: "Home News Image" %>  
-  <span>News List</span>
+  <span>
+    <%= render @front_news %>
+  </span>
+
+  <span>
+    <%= link_to "More...", news_index_path %>
+  </span>
+</div>
+
+<div>
+  <%= image_tag @home_product_image.avatar.url, size: "250x200", alt: "Home News Image" %>  
+  <span>
+    <%= render @front_products %>
+  </span>
+
+  <span>
+    <%= link_to "More...", products_path %>
+  </span>
 </div>

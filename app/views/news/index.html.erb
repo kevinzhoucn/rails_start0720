@@ -10,8 +10,6 @@
         <% if news.created_at %>
           <%= news.created_at.strftime('%Y-%m-%d') %>
         <% end %>
-        <p><%= link_to 'Edit', edit_news_path(news) %></p>
-        <p><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></p>
       </li>
     <%end%>
   </ul>

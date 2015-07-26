@@ -68,6 +68,7 @@ gem 'cancancan'
 
 # 表单
 gem 'simple_form', git: 'https://github.com/plataformatec/simple_form', :tag => 'v3.1.0.rc2'
+gem 'ckeditor'
 
 # Bootstrap
 # Bootstrap

@@ -41,4 +41,11 @@
     |
     <%= link_to t('edit'), edit_cpanel_picture_path(@home_news_image) %>
   </p>
+  <p>
+    <%= t('cpanel.edit_home_product_image') %>
+    |
+    <%= image_tag @home_product_image.avatar.url(:thumb) %>
+    |
+    <%= link_to t('edit'), edit_cpanel_picture_path(@home_product_image) %>
+  </p>
 </div>
