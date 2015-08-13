@@ -1,19 +1,25 @@
 Rails40Starter::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  resources :products, only: [:index, :show]
+  devise_for :users
 
-  resources :partners
-  resources :pictures
-
+  # scope "(:locale)", :locale => /en|zh-CN/ do
+  get '/' => 'front#index'
+  get '/about' => 'front#about', as: :front_about
+  get '/contact' => 'front#contact_us', as: :front_contact
+  get '/support' => 'front#support', as: :front_support
   get '/news/search' => 'news#search', as: :news_search
   get '/activities/search' => 'activities#search', as: :activities_search
 
+  resources :products, only: [:index, :show]
+  resources :partners
+  resources :pictures
   resources :slides
   resources :resumes
   resources :positions
   resources :activities
   resources :news, only: [:index, :show]
-  resources :services
+  resources :services  
+  # end
 
   namespace :cpanel do
     get '/' => 'front#index', as: :front_index
@@ -31,13 +37,8 @@ Rails40Starter::Application.routes.draw do
     resources :products
   end
 
-  get '/about' => 'front#about', as: :front_about
-  get '/contact' => 'front#contact_us', as: :front_contact
-  get '/support' => 'front#support', as: :front_support
-
-  devise_for :users
+  root 'front#index'  
   
-  root 'front#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

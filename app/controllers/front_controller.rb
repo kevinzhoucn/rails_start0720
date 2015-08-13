@@ -26,7 +26,7 @@ class FrontController < ApplicationController
     # @search_itmes = search_item.all.first
     @search_itmes = SEARCH_ITEMS ? SEARCH_ITEMS : "SEARCH_ITEMS"
     search_item = SEARCH_ITEMS.split(',')[0]
-    @search_itmes = eval(search_item).all.first.title
+    @search_itmes = eval(search_item).all.first
 
     @search_result = site_search("prod")
   end
